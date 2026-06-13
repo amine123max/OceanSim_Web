@@ -1,5 +1,9 @@
 {% extends "!layout.html" %}
 
+{% block htmltitle %}
+<title>OceanSim</title>
+{% endblock %}
+
 {% block extrahead %}
 {{ super() }}
 <link rel="icon" type="image/svg+xml" href="{{ pathto('_static/favicon.svg', 1) }}">
