@@ -164,6 +164,13 @@ footer a:not(.btn):hover {
   border: 1px solid #3c414a;
 }
 
+.rst-content a code.literal,
+.rst-content a tt.literal {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
 .rst-content div[class^="highlight"],
 .rst-content pre.literal-block {
   background: #181b20;
