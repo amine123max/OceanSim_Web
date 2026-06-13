@@ -171,6 +171,83 @@ footer a:not(.btn):hover {
   border: 1px solid #363b44;
 }
 
+.rst-content div[class*="highlight-"],
+.rst-content .oceansim-literal-code-copy-host {
+  position: relative;
+}
+
+.rst-content div[class*="highlight-"] pre,
+.rst-content .oceansim-literal-code-copy-host > pre.literal-block {
+  padding-right: 6.2rem;
+}
+
+.oceansim-code-copy {
+  align-items: center;
+  background: rgba(32, 35, 40, 0.94);
+  border: 1px solid #454b55;
+  border-radius: 4px;
+  color: #f3eee8;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 6px;
+  height: 30px;
+  justify-content: center;
+  line-height: 1;
+  min-width: 32px;
+  opacity: 0.78;
+  padding: 0 8px;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, opacity 160ms ease;
+  z-index: 4;
+}
+
+.oceansim-code-copy:hover,
+.oceansim-code-copy:focus-visible,
+.oceansim-code-copy.is-copied,
+.oceansim-code-copy.is-failed {
+  opacity: 1;
+}
+
+.oceansim-code-copy:hover,
+.oceansim-code-copy:focus-visible {
+  background: #2b3038;
+  border-color: #fb923c;
+  color: #fff7ed;
+}
+
+.oceansim-code-copy svg {
+  display: block;
+  fill: none;
+  flex: 0 0 auto;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  width: 15px;
+}
+
+.oceansim-code-copy-text {
+  display: none;
+}
+
+.oceansim-code-copy.is-copied,
+.oceansim-code-copy.is-failed {
+  background: #3a271b;
+  border-color: #fb923c;
+  color: #fff7ed;
+}
+
+.oceansim-code-copy.is-copied .oceansim-code-copy-text,
+.oceansim-code-copy.is-failed .oceansim-code-copy-text {
+  display: inline;
+}
+
 .rst-content div[class^="highlight"] pre {
   color: #e6e2dc;
 }

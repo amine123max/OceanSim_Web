@@ -39,6 +39,7 @@ html_favicon = "_static/favicon.ico" if (DOCS_ROOT / "source" / "_static" / "fav
 html_static_path = ["_static"]
 html_extra_path = ["../assets"]
 html_css_files = ["custom.css"]
+html_js_files = ["code-copy.js"]
 html_show_sphinx = True
 html_show_copyright = True
 html_show_sourcelink = True

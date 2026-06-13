@@ -51,10 +51,12 @@ def _validate_output() -> None:
         [
             ("_static/css/theme.css", "Sphinx RTD theme stylesheet"),
             ("_static/js/theme.js", "Sphinx RTD theme script"),
+            ("_static/code-copy.js", "code copy script"),
             ("wy-nav-side", "Sphinx RTD side navigation"),
             ("SphinxRtdTheme.Navigation.enable(true)", "Sphinx RTD navigation bootstrap"),
         ],
     )
+    _assert_file("_static/code-copy.js")
 
     for page in [
         "index.html",
