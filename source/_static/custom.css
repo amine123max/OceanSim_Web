@@ -137,6 +137,22 @@ a,
   color: #ff9f68;
 }
 
+.rst-content a:not(.headerlink):not(.btn),
+.wy-breadcrumbs a,
+.wy-breadcrumbs-aside a,
+footer a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.rst-content a:not(.headerlink):not(.btn):hover,
+.wy-breadcrumbs a:hover,
+.wy-breadcrumbs-aside a:hover,
+footer a:not(.btn):hover {
+  text-decoration-thickness: 2px;
+}
+
 .rst-content a:visited {
   color: #ffb184;
 }
