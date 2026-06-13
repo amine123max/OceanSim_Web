@@ -160,12 +160,6 @@ footer a:not(.btn):hover {
 .rst-content code.literal,
 .rst-content tt.literal {
   color: var(--oceansim-code);
-  background: #202328;
-  border: 1px solid #3c414a;
-}
-
-.rst-content a code.literal,
-.rst-content a tt.literal {
   background: transparent;
   border: 0;
   padding: 0;
