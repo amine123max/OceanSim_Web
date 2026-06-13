@@ -35,7 +35,7 @@ language = "en"
 
 html_theme = "sphinx_rtd_theme"
 html_title = "OceanSim Documentation"
-html_favicon = "../assets/img/Ocean.ico" if (DOCS_ROOT / "assets" / "img" / "Ocean.ico").exists() else None
+html_favicon = "_static/favicon.ico" if (DOCS_ROOT / "source" / "_static" / "favicon.ico").exists() else None
 html_static_path = ["_static"]
 html_extra_path = ["../assets"]
 html_css_files = ["custom.css"]

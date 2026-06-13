@@ -16,6 +16,7 @@ _build/
 /searchindex.js
 /objects.inv
 /Ocean.ico
+/Ocean.svg
 
 # Python cache and virtual environments
 __pycache__/
