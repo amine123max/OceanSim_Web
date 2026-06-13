@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@600;700;800&display=swap");
+
+:root {
+  --oceansim-orange: #f97316;
+  --oceansim-orange-dark: #c2410c;
+  --oceansim-orange-soft: #fff7ed;
+  --oceansim-sidebar: #343131;
+  --oceansim-bg: #25272b;
+  --oceansim-panel: #2d3035;
+  --oceansim-panel-2: #363a40;
+  --oceansim-line: #4a4f58;
+  --oceansim-text: #f1eee9;
+  --oceansim-muted: #c8c1b8;
+  --oceansim-code: #ff8a5b;
+}
+
+body {
+  background: var(--oceansim-bg);
+  color: var(--oceansim-text);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  letter-spacing: 0;
+}
+
+.wy-body-for-nav {
+  background: var(--oceansim-bg);
+}
+
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+  color: #f4eee7;
+  font-family: "Source Serif 4", Georgia, serif;
+  letter-spacing: 0;
+}
+
+.rst-content h1,
+.rst-content h2 {
+  border-color: var(--oceansim-line);
+}
+
+.rst-content p,
+.rst-content li,
+.rst-content dl,
+.rst-content table,
+.rst-content blockquote {
+  color: var(--oceansim-text);
+}
+
+.wy-nav-side {
+  background: var(--oceansim-sidebar);
+}
+
+.wy-side-scroll {
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.wy-side-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.wy-side-nav-search {
+  background: var(--oceansim-orange);
+  border-bottom: 1px solid #a83b06;
+  padding: 27px 20px 20px;
+}
+
+.wy-side-nav-search > a,
+.wy-side-nav-search .wy-dropdown > a {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.wy-side-nav-search > a.icon::before {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.wy-side-nav-search > div.version {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.wy-side-nav-search input[type="text"] {
+  border-radius: 22px;
+  border-color: rgba(67, 20, 7, 0.2);
+  background: #f3f4f6;
+  color: #222;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  padding: 8px 14px;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: #fb923c;
+  font-weight: 800;
+}
+
+.wy-menu-vertical a:hover {
+  background: #4e4a4a;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on a {
+  border-right: 4px solid var(--oceansim-orange);
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+  background: #f2f2f2;
+}
+
+.wy-menu-vertical li.current a {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.wy-menu-vertical li.current a {
+  color: #404040;
+}
+
+.wy-nav-top {
+  background: #17191d;
+  border-bottom: 1px solid var(--oceansim-line);
+}
+
+a,
+.rst-content a {
+  color: #ff9f68;
+}
+
+.rst-content a:visited {
+  color: #ffb184;
+}
+
+.rst-content code.literal,
+.rst-content tt.literal {
+  color: var(--oceansim-code);
+  background: #202328;
+  border: 1px solid #3c414a;
+}
+
+.rst-content div[class^="highlight"],
+.rst-content pre.literal-block {
+  background: #181b20;
+  border: 1px solid #363b44;
+}
+
+.rst-content div[class^="highlight"] pre {
+  color: #e6e2dc;
+}
+
+.rst-content .highlight .go {
+  color: #c7c0b8;
+}
+
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+  white-space: normal;
+}
+
+.rst-content table.docutils {
+  border-color: var(--oceansim-line);
+  background: #15171b;
+}
+
+.rst-content table.docutils td,
+.rst-content table.docutils th,
+.wy-table-responsive table td,
+.wy-table-responsive table th {
+  border-color: var(--oceansim-line) !important;
+  color: var(--oceansim-text) !important;
+}
+
+.rst-content table.docutils th,
+.wy-table-responsive table th {
+  background: #231d18 !important;
+  color: #f5eee7 !important;
+}
+
+.rst-content table.docutils td,
+.wy-table-responsive table td,
+.rst-content table.docutils tbody tr:nth-child(odd) td,
+.rst-content table.docutils tbody tr:nth-child(even) td,
+.wy-table-responsive table tbody tr:nth-child(odd) td,
+.wy-table-responsive table tbody tr:nth-child(even) td,
+.rst-content table.docutils:not(.field-list) tr.row-odd td,
+.rst-content table.docutils:not(.field-list) tr.row-even td,
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n) td {
+  background: #15171b !important;
+  color: var(--oceansim-text) !important;
+}
+
+.rst-content table.docutils tbody tr:nth-child(even) td,
+.wy-table-responsive table tbody tr:nth-child(even) td,
+.rst-content table.docutils:not(.field-list) tr.row-even td,
+.rst-content table.docutils:not(.field-list) tr:nth-child(2n) td {
+  background: #191c21 !important;
+}
+
+.rst-content table.docutils tbody tr:hover td,
+.wy-table-responsive table tbody tr:hover td {
+  background: #20242b !important;
+}
+
+.rst-content dl.py > dt,
+.rst-content dl.class > dt,
+.rst-content dl.function > dt,
+.rst-content dl.method > dt,
+.rst-content dl.py dt.sig,
+.rst-content dl.class dt.sig,
+.rst-content dl.function dt.sig,
+.rst-content dl.method dt.sig {
+  border-top: 3px solid var(--oceansim-orange);
+  background: #211a15 !important;
+  color: #f8efe8 !important;
+}
+
+html.writer-html4 .rst-content dl:not(.docutils) > dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt {
+  border-top: 3px solid #78c8f8 !important;
+  background: #211a15 !important;
+  color: #f8efe8 !important;
+}
+
+.rst-content dl.py > dt code,
+.rst-content dl.class > dt code,
+.rst-content dl.function > dt code,
+.rst-content dl.method > dt code,
+.rst-content dl.py dt.sig code,
+.rst-content dl.class dt.sig code,
+.rst-content dl.function dt.sig code,
+.rst-content dl.method dt.sig code {
+  color: #f8efe8 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.rst-content dl dt.sig,
+.rst-content dl dt.sig *,
+.rst-content dl dt.sig .pre,
+.rst-content dl dt.sig .sig-name,
+.rst-content dl dt.sig .descname,
+.rst-content dl dt.sig .sig-prename,
+.rst-content dl dt.sig .sig-paren,
+.rst-content dl dt.sig .sig-param,
+.rst-content dl dt.sig .sig-return,
+.rst-content dl dt.sig .property,
+.rst-content dl dt.sig em,
+.rst-content dl dt.sig code.descname,
+.rst-content dl dt.sig code.sig-name,
+html.writer-html4 .rst-content dl:not(.docutils) > dt,
+html.writer-html4 .rst-content dl:not(.docutils) > dt *,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt * {
+  color: #f8efe8 !important;
+}
+
+.rst-content dl dt.sig .sig-name,
+.rst-content dl dt.sig .descname,
+.rst-content dl dt.sig .sig-name .pre,
+.rst-content dl dt.sig .descname .pre,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .sig-name,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .descname {
+  color: #fb923c !important;
+  font-weight: 800;
+}
+
+html.writer-html4 .rst-content dl:not(.docutils) > dt .sig-name .pre,
+html.writer-html4 .rst-content dl:not(.docutils) > dt .descname .pre,
+html.writer-html4 .rst-content dl:not(.docutils) > dt code.sig-name .pre,
+html.writer-html4 .rst-content dl:not(.docutils) > dt code.descname .pre,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .sig-name .pre,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .descname .pre,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt code.sig-name .pre,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt code.descname .pre {
+  color: #fb923c !important;
+  font-weight: 800;
+}
+
+.rst-content dl dt.sig .property,
+.rst-content dl dt.sig .property *,
+.rst-content dl dt.sig em.property,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .property {
+  color: #ffe6d2 !important;
+}
+
+.rst-content dl dt.sig a.headerlink,
+.rst-content dl dt.sig a.headerlink *,
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt .headerlink {
+  color: #fb923c !important;
+  opacity: 0.9;
+}
+
+.rst-content dl.field-list dt {
+  color: #f8efe8;
+}
+
+.rst-content .admonition.note {
+  border-color: var(--oceansim-orange);
+}
+
+.rst-content .admonition-title {
+  background: var(--oceansim-orange);
+}
+
+.wy-nav-content {
+  max-width: none;
+  background: var(--oceansim-bg);
+}
+
+.wy-nav-content-wrap {
+  background: var(--oceansim-bg);
+}
+
+.rst-content {
+  max-width: 1180px;
+}
+
+.wy-breadcrumbs,
+.wy-breadcrumbs li,
+.wy-breadcrumbs a,
+.wy-breadcrumbs-aside a {
+  color: var(--oceansim-muted);
+}
+
+.wy-breadcrumbs a:hover,
+.wy-breadcrumbs-aside a:hover {
+  color: #ff9f68;
+}
+
+.rst-footer-buttons .btn,
+.btn-neutral {
+  background: #202328 !important;
+  border-color: #3b4049 !important;
+  color: #f3eee8 !important;
+}
+
+.rst-footer-buttons .btn:hover,
+.btn-neutral:hover {
+  background: #292d34 !important;
+}
+
+.rst-content footer,
+footer,
+.footer {
+  color: var(--oceansim-muted);
+}
+
+.footer,
+footer {
+  font-size: 14px;
+}
+
+.oceansim-title-card {
+  margin: 0 0 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: center;
+}
+
+.oceansim-title-card img {
+  display: block;
+  width: min(100%, 720px);
+  height: auto;
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1100px) {
+  .wy-nav-content {
+    padding: 1.618em clamp(3em, 5vw, 6em);
+  }
+}

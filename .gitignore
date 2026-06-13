@@ -1,0 +1,33 @@
+# Sphinx build output
+_build/
+.doctrees/
+.buildinfo
+
+# Generated static-site files at repository root
+/_static/
+/_sources/
+/guide/
+/api/
+/developer/
+/img/
+/index.html
+/search.html
+/genindex.html
+/searchindex.js
+/objects.inv
+/Ocean.ico
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Node/editor/local system files
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
