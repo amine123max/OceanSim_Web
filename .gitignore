@@ -1,22 +1,6 @@
-# Sphinx build output
+# Sphinx intermediate build output
 _build/
 .doctrees/
-.buildinfo
-
-# Generated static-site files at repository root
-/_static/
-/_sources/
-/guide/
-/api/
-/developer/
-/img/
-/index.html
-/search.html
-/genindex.html
-/searchindex.js
-/objects.inv
-/Ocean.ico
-/Ocean.svg
 
 # Python cache and virtual environments
 __pycache__/

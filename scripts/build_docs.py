@@ -9,6 +9,26 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_DIR = ROOT / "source"
 BUILD_DIR = ROOT / "_build" / "html"
+PUBLISH_ROOT_NAMES = [
+    "_sources",
+    "_static",
+    "api",
+    "developer",
+    "guide",
+    "img",
+    ".buildinfo",
+    ".doctrees",
+    ".nojekyll",
+    "genindex.html",
+    "index.html",
+    "objects.inv",
+    "search.html",
+    "searchindex.js",
+    "Ocean.ico",
+    "Ocean.svg",
+    "css",
+    "js",
+]
 
 
 def _run_sphinx() -> None:
@@ -54,6 +74,7 @@ def _validate_output() -> None:
             ("_static/code-copy.js", "code copy script"),
             ("wy-nav-side", "Sphinx RTD side navigation"),
             ("SphinxRtdTheme.Navigation.enable(true)", "Sphinx RTD navigation bootstrap"),
+            ('href="https://github.com/amine123max/OceanSim"', "OceanSim repository title link"),
         ],
     )
     _assert_file("_static/code-copy.js")
@@ -76,11 +97,34 @@ def _validate_output() -> None:
         _assert_file(page)
 
 
+def _remove_publish_path(path: Path) -> None:
+    if path.is_dir() and not path.is_symlink():
+        shutil.rmtree(path)
+    elif path.exists() or path.is_symlink():
+        path.unlink()
+
+
+def _publish_to_root() -> None:
+    for name in PUBLISH_ROOT_NAMES:
+        _remove_publish_path(ROOT / name)
+
+    for item in BUILD_DIR.iterdir():
+        if item.name == ".doctrees":
+            continue
+        destination = ROOT / item.name
+        if item.is_dir():
+            shutil.copytree(item, destination)
+        else:
+            shutil.copy2(item, destination)
+
+
 def main() -> None:
     _run_sphinx()
     _validate_output()
     (BUILD_DIR / ".nojekyll").write_text("", encoding="utf-8")
+    _publish_to_root()
     print(f"OceanSim documentation built at {BUILD_DIR}")
+    print(f"OceanSim publishable site mirrored to {ROOT}")
 
 
 if __name__ == "__main__":

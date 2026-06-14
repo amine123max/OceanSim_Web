@@ -6,7 +6,7 @@
 
 OceanSim Web 是 OceanSim 开发者文档的发布仓库。它维护 Sphinx 文档源文件、项目静态资源、可复现构建验证脚本，以及面向 GitHub Pages 的自动部署流程，用于发布 OceanSim 仿真器、Python SDK、TCP 协议、agent runtime、scenario schema、传感器接口和 release checks 等工程文档。
 
-本仓库采用 source-first 的长期维护方式：不提交生成后的 HTML。所有公开页面都由 GitHub Actions 从 `source/` 构建，经过真实 `sphinx_rtd_theme` 输出校验后，再把 `_build/html` 部署到 GitHub Pages。这样可以保持仓库审查清晰，避免静态产物过期，并让公开文档始终可追溯到版本化源文件。
+本仓库维护 `source/` 下的 Sphinx 源文件，并把生成后的静态站点同步到仓库根目录，方便直接静态托管。所有公开页面都从 `source/` 构建，经过真实 `sphinx_rtd_theme` 输出校验后，同时写入 `_build/html` 和根目录发布文件。
 
 ## 仓库结构
 
@@ -34,10 +34,11 @@ python -m pip install -r requirements.txt
 python scripts\build_docs.py
 ```
 
-生成后的站点位于：
+生成后的站点会写入 `_build/html`，并同步到仓库根目录：
 
 ```text
 _build/html
+OceanSim_Web/
 ```
 
 构建脚本会检查输出是否仍然使用真实的 Sphinx Read the Docs 主题，包括 `theme.css`、`theme.js`、RTD 侧栏导航和导航初始化标记。
@@ -66,7 +67,7 @@ https://<你的用户名>.github.io/<仓库名>/
 
 ## 干净上传原则
 
-只提交源码和配置：
+提交源码、配置和根目录发布文件：
 
 - `source/`
 - `assets/`
@@ -78,15 +79,12 @@ https://<你的用户名>.github.io/<仓库名>/
 - `README.md`
 - `README.zh-CN.md`
 - `.gitignore`
+- 根目录生成文件，例如 `index.html`、`_static/`、`_sources/`、`guide/`、`api/`、`developer/` 和 `img/`
 
-不要提交生成产物：
+不要提交中间构建目录：
 
 - `_build/`
-- `_static/`
-- `_sources/`
-- 根目录生成的 `guide/`、`api/`、`developer/`、`img/`
-- `index.html`、`search.html`、`genindex.html`、`searchindex.js`、`objects.inv`
-- `.buildinfo`
+- `.doctrees/`
 
 ## 许可证
 

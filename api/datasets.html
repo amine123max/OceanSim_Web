@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OceanSim</title>
+
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a20b382f" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=73b57a12"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/code-copy.js?v=27b45de1"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Development Notes" href="../developer/index.html" />
+    <link rel="prev" title="Mapping Utilities" href="mapping.html" />
+ 
+<link rel="icon" type="image/svg+xml" href="../_static/favicon.svg">
+<link rel="icon" type="image/x-icon" href="../_static/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../_static/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../_static/apple-touch-icon.png">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            OceanSim
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../guide/getting-started.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/getting-started.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/getting-started.html#run-the-simulator">Run the simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/getting-started.html#install-the-sdk">Install the SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/getting-started.html#connection-check">Connection check</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/using-oceansim.html">Using OceanSim</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/using-oceansim.html#runtime-model">Runtime model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/using-oceansim.html#coordinate-frames">Coordinate frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/using-oceansim.html#workflow-patterns">Workflow patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/using-oceansim.html#minimal-loop">Minimal loop</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/agents.html">Agents and Runtime</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#agent-roles">Agent roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#control-contracts">Control contracts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#python-example">Python example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#scenario-definition">Scenario definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#scenario-agent-fields">Scenario agent fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#runtime-state-fields">Runtime state fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#export-trace-fields">Export trace fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#multi-agent-workflow">Multi-agent workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/agents.html#recommended-release-checks">Recommended release checks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/scenarios.html">Scenarios</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/scenarios.html#scenario-files">Scenario files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/scenarios.html#map-actions">Map actions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/scenarios.html#dynamic-agents">Dynamic agents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/scenarios.html#agent-schema-fields">Agent schema fields</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../guide/sensors.html">Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../guide/sensors.html#sensor-families">Sensor families</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/sensors.html#payload-envelope">Payload envelope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../guide/sensors.html#data-access">Data access</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#public-exports">Public exports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="protocol.html">TCP Protocol</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#wire-format">Wire format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#envelopes">Envelopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#action-summary">Action summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#command-details">Command details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#get_state"><code class="docutils literal notranslate"><span class="pre">get_state()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#get_sensors"><code class="docutils literal notranslate"><span class="pre">get_sensors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#step"><code class="docutils literal notranslate"><span class="pre">step()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#set_force"><code class="docutils literal notranslate"><span class="pre">set_force()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#set_force_world"><code class="docutils literal notranslate"><span class="pre">set_force_world()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#set_force_body"><code class="docutils literal notranslate"><span class="pre">set_force_body()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#set_body_wrench"><code class="docutils literal notranslate"><span class="pre">set_body_wrench()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#set_body_velocity"><code class="docutils literal notranslate"><span class="pre">set_body_velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#set_scenario"><code class="docutils literal notranslate"><span class="pre">set_scenario()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#get_terrain_grid"><code class="docutils literal notranslate"><span class="pre">get_terrain_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="protocol.html#export_dataset"><code class="docutils literal notranslate"><span class="pre">export_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#batch-requests">Batch requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="protocol.html#errors">Errors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">OceanSim Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="client.html#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client.html#OceanSimClient"><code class="docutils literal notranslate"><span class="pre">OceanSimClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.PROTOCOL_VERSION"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.PROTOCOL_VERSION</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.is_connected"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.is_connected</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.launch_godot"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.launch_godot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.connect"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.disconnect"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.disconnect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.send"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.send()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.send_command"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.send_command()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.send_sim_control"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.send_sim_control()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.send_batch"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.send_batch()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.request_state"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.request_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="client.html#OceanSimClient.get_latest_state"><code class="docutils literal notranslate"><span class="pre">OceanSimClient.get_latest_state()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="client.html#OceanSimError"><code class="docutils literal notranslate"><span class="pre">OceanSimError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="client.html#OceanSimConnectionError"><code class="docutils literal notranslate"><span class="pre">OceanSimConnectionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="client.html#OceanSimTimeoutError"><code class="docutils literal notranslate"><span class="pre">OceanSimTimeoutError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="client.html#OceanSimProtocolError"><code class="docutils literal notranslate"><span class="pre">OceanSimProtocolError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="client.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="auv.html">AUV Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="auv.html#auvstate">AUVState</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auv.html#AUVState"><code class="docutils literal notranslate"><span class="pre">AUVState</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUVState.x"><code class="docutils literal notranslate"><span class="pre">AUVState.x</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUVState.y"><code class="docutils literal notranslate"><span class="pre">AUVState.y</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUVState.z"><code class="docutils literal notranslate"><span class="pre">AUVState.z</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="auv.html#auv">AUV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="auv.html#AUV"><code class="docutils literal notranslate"><span class="pre">AUV</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="auv.html#connection">Connection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.connect"><code class="docutils literal notranslate"><span class="pre">AUV.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.disconnect"><code class="docutils literal notranslate"><span class="pre">AUV.disconnect()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auv.html#control">Control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.set_force"><code class="docutils literal notranslate"><span class="pre">AUV.set_force()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.set_force_world"><code class="docutils literal notranslate"><span class="pre">AUV.set_force_world()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.set_force_body"><code class="docutils literal notranslate"><span class="pre">AUV.set_force_body()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.set_body_wrench"><code class="docutils literal notranslate"><span class="pre">AUV.set_body_wrench()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.set_body_velocity"><code class="docutils literal notranslate"><span class="pre">AUV.set_body_velocity()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.hold_depth_step"><code class="docutils literal notranslate"><span class="pre">AUV.hold_depth_step()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.track_waypoint_step"><code class="docutils literal notranslate"><span class="pre">AUV.track_waypoint_step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auv.html#state-and-sensors">State and sensors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="auv.html#AUV.get_sensors"><code class="docutils literal notranslate"><span class="pre">AUV.get_sensors()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="auv.html#maps-agents-and-overlays">Maps, agents, and overlays</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agents.html">Agent API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agents.html#AgentDefinition"><code class="docutils literal notranslate"><span class="pre">AgentDefinition</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agents.html#AgentDefinition.from_dict"><code class="docutils literal notranslate"><span class="pre">AgentDefinition.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agents.html#AgentDefinition.to_dict"><code class="docutils literal notranslate"><span class="pre">AgentDefinition.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agents.html#ActionSpace"><code class="docutils literal notranslate"><span class="pre">ActionSpace</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agents.html#ActionSpace.validate"><code class="docutils literal notranslate"><span class="pre">ActionSpace.validate()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agents.html#OceanSimAgent"><code class="docutils literal notranslate"><span class="pre">OceanSimAgent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="agents.html#AgentFactory"><code class="docutils literal notranslate"><span class="pre">AgentFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agents.html#AgentFactory.build_agent"><code class="docutils literal notranslate"><span class="pre">AgentFactory.build_agent()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#control-schemes">Control schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#bounds-and-vehicle-profiles">Bounds and vehicle profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#error-behavior">Error behavior</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#runtime-fields">Runtime fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#export-trace-contract">Export trace contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agents.html#release-checks">Release checks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensor Schema</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#schema-fields">Schema fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#normalize_sensor_payload"><code class="docutils literal notranslate"><span class="pre">normalize_sensor_payload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#validate_sensor_payload"><code class="docutils literal notranslate"><span class="pre">validate_sensor_payload()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="sensors.html#validate_sensor_set"><code class="docutils literal notranslate"><span class="pre">validate_sensor_set()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sensors.html#point-cloud-access">Point-cloud access</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mapping.html">Mapping Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mapping.html#coordinates">Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mapping.html#oceansim-point-cloud-map">OceanSim point-cloud map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.add_cloud"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.add_cloud()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.add_pose"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.add_pose()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.cloud_array"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.cloud_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.save_npz"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.save_npz()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.load_npz"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.load_npz()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.render_colored_map"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.render_colored_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#OceanSimPointCloudMap.render_exploration_map"><code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap.render_exploration_map()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mapping.html#rgb-d-slam">RGB-D SLAM</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.add_frame"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.add_frame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.point_array"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.point_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.color_array"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.color_array()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.fused_arrays"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.fused_arrays()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.save_ply"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.save_ply()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.save_npz"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.save_npz()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="mapping.html#RGBDPointCloudSLAM.render"><code class="docutils literal notranslate"><span class="pre">RGBDPointCloudSLAM.render()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mapping.html#adapters">Adapters</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dataset Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recording">Recording</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#OceanSimPklRecorder"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.scenario"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.scenario</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.voxel_size"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.voxel_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.max_points_per_frame"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.max_points_per_frame</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.add_frame"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.add_frame()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.to_dataset"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.to_dataset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.save"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimPklRecorder.load"><code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.load()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dataset_to_mapper"><code class="docutils literal notranslate"><span class="pre">dataset_to_mapper()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load_pkl_dataset"><code class="docutils literal notranslate"><span class="pre">load_pkl_dataset()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#replay">Replay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#OceanSimRunReplay"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.open"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.frame_count"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.frame_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.iter_frames"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.iter_frames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.trajectory"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.trajectory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.sensor_frames"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.sensor_frames()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.summary"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.summary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.tum_trajectory_rows"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.tum_trajectory_rows()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#OceanSimRunReplay.euroc_trajectory_rows"><code class="docutils literal notranslate"><span class="pre">OceanSimRunReplay.euroc_trajectory_rows()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#camera-images">Camera images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#robotics-exports">Robotics exports</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developer/index.html">Development Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/index.html#repository-layout">Repository layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/index.html#change-guidelines">Change guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/index.html#smoke-tests">Smoke tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/index.html#release-gate">Release gate</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/troubleshooting.html#common-issues">Common issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developer/troubleshooting.html#diagnostic-check">Diagnostic check</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer/license.html">License</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../developer/license.html#mit-license">MIT License</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">OceanSim</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Dataset Tools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/api/datasets.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dataset-tools">
+<h1>Dataset Tools<a class="headerlink" href="#dataset-tools" title="Link to this heading"></a></h1>
+<p>Dataset tools convert live OceanSim runs into offline artifacts for mapping, evaluation, robotics integration, replay, and publication figures.</p>
+<section id="recording">
+<h2>Recording<a class="headerlink" href="#recording" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="OceanSimPklRecorder">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OceanSimPklRecorder</span></span><a class="headerlink" href="#OceanSimPklRecorder" title="Link to this definition"></a></dt>
+<dd><p>Collect OceanSim frames into a pickle dataset for offline replay and figures.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.scenario">
+<span class="sig-name descname"><span class="pre">scenario</span></span><a class="headerlink" href="#OceanSimPklRecorder.scenario" title="Link to this definition"></a></dt>
+<dd><p>Scenario label stored in the dataset metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.voxel_size">
+<span class="sig-name descname"><span class="pre">voxel_size</span></span><a class="headerlink" href="#OceanSimPklRecorder.voxel_size" title="Link to this definition"></a></dt>
+<dd><p>Point-cloud voxel size used when compacting frames.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.max_points_per_frame">
+<span class="sig-name descname"><span class="pre">max_points_per_frame</span></span><a class="headerlink" href="#OceanSimPklRecorder.max_points_per_frame" title="Link to this definition"></a></dt>
+<dd><p>Maximum number of points stored for each frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.add_frame">
+<span class="sig-name descname"><span class="pre">add_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point_cloud</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imaging_sonar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lidar_2d</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rgbd_dense</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimPklRecorder.add_frame" title="Link to this definition"></a></dt>
+<dd><p>Append one compact simulation frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.to_dataset">
+<span class="sig-name descname"><span class="pre">to_dataset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimPklRecorder.to_dataset" title="Link to this definition"></a></dt>
+<dd><p>Return a serializable dataset dictionary.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimPklRecorder.save" title="Link to this definition"></a></dt>
+<dd><p>Write the dataset to a PKL file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimPklRecorder.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimPklRecorder.load" title="Link to this definition"></a></dt>
+<dd><p>Load a PKL dataset dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="dataset_to_mapper">
+<span class="sig-name descname"><span class="pre">dataset_to_mapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">voxel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dataset_to_mapper" title="Link to this definition"></a></dt>
+<dd><p>Build an <code class="docutils literal notranslate"><span class="pre">OceanSimPointCloudMap</span></code> from a PKL dataset, preserving trajectory and point-cloud frames.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="load_pkl_dataset">
+<span class="sig-name descname"><span class="pre">load_pkl_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_pkl_dataset" title="Link to this definition"></a></dt>
+<dd><p>Load a PKL dataset through <code class="docutils literal notranslate"><span class="pre">OceanSimPklRecorder.load</span></code>.</p>
+</dd></dl>
+
+</section>
+<section id="replay">
+<h2>Replay<a class="headerlink" href="#replay" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="OceanSimRunReplay">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OceanSimRunReplay</span></span><a class="headerlink" href="#OceanSimRunReplay" title="Link to this definition"></a></dt>
+<dd><p>Read an exported OceanSim run for deterministic offline inspection.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">run_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.open" title="Link to this definition"></a></dt>
+<dd><p>Open an exported run directory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.frame_count">
+<span class="sig-name descname"><span class="pre">frame_count</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.frame_count" title="Link to this definition"></a></dt>
+<dd><p>Return number of replay frames.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.iter_frames">
+<span class="sig-name descname"><span class="pre">iter_frames</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.iter_frames" title="Link to this definition"></a></dt>
+<dd><p>Iterate exported frame dictionaries.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.trajectory">
+<span class="sig-name descname"><span class="pre">trajectory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.trajectory" title="Link to this definition"></a></dt>
+<dd><p>Return trajectory as a NumPy array.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.sensor_frames">
+<span class="sig-name descname"><span class="pre">sensor_frames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.sensor_frames" title="Link to this definition"></a></dt>
+<dd><p>Iterate frames for one sensor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.summary" title="Link to this definition"></a></dt>
+<dd><p>Return high-level run metadata.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.tum_trajectory_rows">
+<span class="sig-name descname"><span class="pre">tum_trajectory_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.tum_trajectory_rows" title="Link to this definition"></a></dt>
+<dd><p>Export trajectory rows for TUM-style benchmark tools.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="OceanSimRunReplay.euroc_trajectory_rows">
+<span class="sig-name descname"><span class="pre">euroc_trajectory_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OceanSimRunReplay.euroc_trajectory_rows" title="Link to this definition"></a></dt>
+<dd><p>Export trajectory rows for EuRoC-style benchmark tools.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="camera-images">
+<h2>Camera images<a class="headerlink" href="#camera-images" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 42.0%" />
+<col style="width: 58.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">camera_payload_to_arrays(payload)</span></code></p></td>
+<td><p>Convert an OceanSim camera payload to RGB, depth, and segmentation arrays.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">save_camera_payload(payload,</span> <span class="pre">output_dir,</span> <span class="pre">prefix=&quot;camera&quot;)</span></code></p></td>
+<td><p>Save camera payload arrays as PNG files.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">AUV.save_camera_images(output_dir,</span> <span class="pre">prefix=&quot;camera&quot;)</span></code></p></td>
+<td><p>Fetch current camera payload and save images in one call.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="robotics-exports">
+<h2>Robotics exports<a class="headerlink" href="#robotics-exports" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 42.0%" />
+<col style="width: 58.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">export_ros2_bridge_dataset(run_dir,</span> <span class="pre">output_dir=None)</span></code></p></td>
+<td><p>Write ROS2-bridge-friendly JSONL topics from an exported OceanSim run.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">export_mcap_like_dataset(run_dir,</span> <span class="pre">output_dir=None)</span></code></p></td>
+<td><p>Write an MCAP-ready sidecar dataset without requiring the MCAP Python package.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">reconstruct_mesh_obj(dataset_path,</span> <span class="pre">output_obj,</span> <span class="pre">...)</span></code></p></td>
+<td><p>Reconstruct an OBJ mesh from an OceanSim point-cloud PKL dataset.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mapping.html" class="btn btn-neutral float-left" title="Mapping Utilities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../developer/index.html" class="btn btn-neutral float-right" title="Development Notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, <a href="https://amine123max.github.io/">OceanSim</a>.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

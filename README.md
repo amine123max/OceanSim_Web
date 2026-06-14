@@ -6,7 +6,7 @@
 
 OceanSim Web is the publication repository for the OceanSim developer documentation. It provides the maintained Sphinx source tree, project-specific documentation assets, reproducible build validation, and a GitHub Pages deployment pipeline for the OceanSim simulator, Python SDK, TCP protocol, agent runtime, scenario schema, sensor interfaces, and release checks.
 
-This repository is intentionally source-first: generated HTML is not committed. Every published page is built from `source/` by GitHub Actions, validated against the real `sphinx_rtd_theme` output, and deployed from `_build/html` to GitHub Pages. This keeps the repository reviewable, avoids stale static artifacts, and makes the public documentation traceable to versioned source files.
+This repository keeps the Sphinx source in `source/` and mirrors the generated static site to the repository root for direct static hosting. Every published page is built from `source/`, validated against the real `sphinx_rtd_theme` output, and written to both `_build/html` and the root publish directory.
 
 ## Repository Layout
 
@@ -34,10 +34,11 @@ python -m pip install -r requirements.txt
 python scripts\build_docs.py
 ```
 
-The generated site is written to:
+The generated site is written to `_build/html` and mirrored to the repository root:
 
 ```text
 _build/html
+OceanSim_Web/
 ```
 
 The build script checks that the output still uses the real Sphinx Read the Docs theme, including `theme.css`, `theme.js`, RTD side navigation, and navigation initialization.
@@ -66,7 +67,7 @@ https://<your-username>.github.io/<repository-name>/
 
 ## Clean Upload Policy
 
-Commit source and configuration files only:
+Commit source, configuration, and root-level publish files:
 
 - `source/`
 - `assets/`
@@ -78,15 +79,12 @@ Commit source and configuration files only:
 - `README.md`
 - `README.zh-CN.md`
 - `.gitignore`
+- root-level generated files such as `index.html`, `_static/`, `_sources/`, `guide/`, `api/`, `developer/`, and `img/`
 
-Do not commit generated output:
+Do not commit intermediate build output:
 
 - `_build/`
-- `_static/`
-- `_sources/`
-- root-level `guide/`, `api/`, `developer/`, `img/`
-- `index.html`, `search.html`, `genindex.html`, `searchindex.js`, `objects.inv`
-- `.buildinfo`
+- `.doctrees/`
 
 ## License
 
